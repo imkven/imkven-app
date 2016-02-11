@@ -1,4 +1,10 @@
 {
   "name": "imkven-app",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/feed",
+      "proxyUrl": "http://localhost:3000/feed"
+    }
+  ]
 }

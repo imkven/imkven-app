@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('EntriesCtrl', function($scope, $ionicLoading, FeedService) {
+.controller('EntriesCtrl', function($scope, $ionicLoading, ContentService) {
   $scope.openInAppBrowser = function(url) {
     window.open(url, '_blank');
   };
@@ -9,8 +9,9 @@ angular.module('starter.controllers', ['ionic'])
     template: 'Loading...'
   });
 
-  FeedService.parseFeed('http://imkven.github.io/feed.xml').then(function(res){
-    $scope.feed = res.data.responseData.feed;
+  ContentService.get('http://localhost:3000/feed').then(function(res){
+    console.log('res.data', res.data);
+    $scope.feed = res.data;
     $ionicLoading.hide();
   });
 });

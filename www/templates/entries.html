@@ -1,9 +1,9 @@
-<ion-view view-title="{{feed.title}}">
+<ion-view view-title="Articles">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate" ng-repeat="entry in feed.entries" type="item-text-wrap" ng-click="openInAppBrowser('{{entry.link}}')">
-        <h2>{{entry.title}}</h2>
-        <p>{{entry.contentSnippet}}</p>
+      <ion-item class="item-remove-animate" ng-repeat="article in feed.articles" type="item-text-wrap" ng-click="openInAppBrowser('{{ article.url }}')">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.plain }}</p>
       </ion-item>
     </ion-list>
   </ion-content>
